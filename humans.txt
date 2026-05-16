@@ -1,0 +1,16 @@
+/* TEAM */
+   Founders: Lorenzo Puccetti And Daniel Shaya.
+   Marketing Help: Oonagh McQuillan
+   UX Designer: Lorenzo Puccetti
+   
+/* THANKS */
+   Le Pôle Créatif for the logo, icons, images and suggestions.
+   site: http://www.lepolecreatif.fr/
+   
+/* SITE */
+	Language:English
+	Doctype:HTML5
+	IDE:Eclipse, Textpad
+	Technologies: Html5, javascript, css, nodejs, google app engine, java, json, rest, http, and many others.
+	Web Tools: CodeMirror, JSBeautifier, JSFiddle, Modernizr. 
+	

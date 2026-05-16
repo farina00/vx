@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>ValidFIX - Quick Tour</title>
+	<meta name="keywords" content="ValidFIX,FIX Protocol,Quick Tour" />
+	<meta name="description" content="Quick Tour on ValidFIX. How to use our FIX Web Tools" />
+	<link rel="stylesheet" type="text/css" href="s.css"/>
+</head>
+<body>
+	<div id="header">
+	   <a href="http://www.validfix.com/index.html">
+    	<img src="http://www.validfix.com/img/validfix.jpg" border="0" alt="ValidFIX - For FIX Protocol Users" width=315 height=105 />
+    	</a>
+	</div>
+	<div id="menu">
+		<ul>
+		   <li><span>Quick Tour</span></li>
+			<li><a href="fix-analyzer.html">FIX Analyzer</a></li>
+			<li><a href="fix-log-analyzer.html">FIX Log Analyzer</a></li>
+			<li><a href="pricing.html">Pricing</a></li>
+		</ul>
+	</div>
+	<div id="wrapper" style='visibility:hidden'>
+		<div>
+			<div id="moveleft" class="sliderbutton" style="visibility:hidden"><img src="img/tour-left.jpg" width="32" height="38" alt="Previous" onclick="slideshow.move(-1)" /></div>
+			<div id="slider">
+				<ul>
+					<li id="content">
+						<h3>What is www.ValidFIX.com ?</h3>
+						<p>ValidFIX is a website for anybody who works with the FIX Protocol. 
+						<p>For the business, we have <span style='font-weight:bold'>VX</span>: an enterprise-class web solution that gives you rich insights into your financial data. 
+						<p>For the developers, we have 3 simple cloud-based services:
+						<p>
+						
+						
+						<span style='color:#444;'>FIX Analyzer</span> to inspect one single fix message<br>
+						<span style='color:#444;'>FIX Log Analyzer</span> to inspect sections of logs from any FIX Application<br>
+						<span style='color:#444;'>FIX Dashboard</span> to study FIX Data in their entirety <i>(coming soon)</i><br>
+						
+					</li>
+					<li id="content">
+						<h3>Test your FIX Message</h3>
+						<p>Use FIX Analyzer to inspect a single FIX message.
+						<br>
+						<div style="margin:0 0 20px 0;border:1px solid #99F;font-size:11px;color:#000;"> 
+							8=FIX.4.2|9=42|35=0|49=A|56=B|34=12|52=20100304-07:59:30|10=185|
+						</div>
+					</li>
+					<li id="content">
+						<h3>Analyze your logs </h3>
+						<p>
+						Use FIX Log Analyzer to inspect any section of a log file.
+						<div style="margin:0 0 20px 0;border:1px solid #99F;font-size:11px;color:#000;"> 
+							8=FIX.4.2|9=42|35=0|49=A|56=B|34=12|52=20120304-07:59:30|10=187|<br>
+							8=FIX.4.2|9=42|35=0|49=A|56=B|34=13|52=20120304-07:59:30|10=187|<br><br><br>
+						</div>
+					</li>
+					<li id="content">
+						<h3>Gain insights that matter</h3>
+						<p>
+						Use FIX Dashboard to explore large FIX data set.
+						
+					</li>
+					<li id="content">
+						<h3>What about sensitive data ?</h3>
+						<p>
+						We don't encrypt your data to protect it: we have figured the 
+						safest way to protect is NOT to send it at all.
+						<p>   
+						All our services are running on your machine. 
+						Your FIX messages are not sent over the network.
+						<p>
+						   In other words: 
+				    	   You And Your firm have really nothing to worry about. 
+					</li>
+					<li id="content">
+						<h3>Get Started</h3>
+						<p>The fastest way to understand our services is to try them out.
+						   Look for the [show-me-an-example] button to press in each demo and you will get the gist. 
+						<p>	
+						<a href="fix-analyzer.html">FIX Analyzer (demo)</a>
+						<br>
+						<a href="fix-log-analyzer.html">FIX Log Analyzer (demo)</a>
+						<br>
+						<a href="#">FIX Dashboard (demo)</a> <i>(not yet available)</i>
+				   </li>
+				</ul>
+			</div>
+			<div id="moveright" class="sliderbutton">
+				<img src="img/tour-right.jpg" width="32" height="38" alt="Next" onclick="slideshow.move(1)" />
+			</div>
+		</div>
+	</div>
+ 
+	<script src="http://www.validfix.com/js/tour.js"></script>
+	<script> 
+	document.getElementById('wrapper').style.visibility ='visible';
+  var _gaq = _gaq || []; 
+  _gaq.push(['_setAccount', 'UA-15080849-1']); 
+  _gaq.push(['_trackPageview']); 
+  (function() { 
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+    ga.src = 'http://www.google-analytics.com/ga.js'; 
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga); 
+  })(); 
+</script>
+</body>
+</html>

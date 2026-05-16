@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>ValidFIX - FIX Cube</title>
+	<link href="http://www.validfix.com/s.css" rel="stylesheet" type="text/css" />
+	<style>
+		.left {	height:20px; }
+		.right { 
+		   text-align:right; 
+		   margin-right:1px;
+		   padding-right:4px;
+		   position:absolute;
+		   right:0px;
+		   width:95px;
+		   border-left:1px solid #aaa;
+		   margin-top:-20px;
+		   height:20px;
+		}
+		.row {
+		   white-space:nowrap;
+		   border-bottom:1px solid #aaa;
+		   height:20px;
+		}
+		.grid {
+		   overflow:hidden;
+			border-left:1px solid #aaa;
+		   border-right:1px solid #aaa;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+	   <a href="http://www.validfix.com/index.html">
+    	<img src="http://www.validfix.com/img/validfix.jpg" border="0" alt="ValidFIX - For FIX Protocol Users"/>
+    	</a>
+	</div>
+	<div id="menu">
+		<ul>
+		   <li><a href="http://www.validfix.com/quick-tour.html">Quick Tour</a></li>
+			<li><a href="fix-analyzer.html">FIX Analyzer</a></li>
+			<li><a href="fix-log-analyzer.html">FIX Log Analyzer</a></li>
+			<li><span>FIX Cube</span></li>
+		</ul>
+	</div>
+	<div id='smae' onclick='tryMe();' >[Show Me An Example]</div>
+   <div style="margin-left:2%;margin-right:2%;text-align:center;padding:30px 0 0 0;">
+	    <textarea type='text' id='txtFix' 
+		  style="border:1px solid #999; 
+		  padding:3px; width:100%;
+		  height:110px;font-size: 11px;
+		  overflow-x:hidden;" wrap="off" >Enter your log here...</textarea>
+	    <input id='txtQL' type="text"  style="font-size:11px;width:200px;" 
+	    placeholder = 'Expression. E.G.: 207,1 '
+	    onkeydown="if (event.keyCode == 13) { if (window.exc) window.exc() }" >
+		 <input type="button" style="margin:2px 0 0 0;" id='btn' onclick="if (window.exc) window.exc();" value="Analyze"/>
+		 <span id='pb'></span>
+	</div>
+	<div id='result' style="position: relative;
+        white-space:nowrap;
+        margin-left:2%;
+        margin-right:2%;
+        margin-bottom:60px;
+        left:0px;
+        right:0px;
+        top: 30px;
+        font-size:  11px;
+    	  color:      black;">
+	</div>
+	<script>
+      var script = document.createElement("script");
+		script.src = "js/fc.js";
+		document.body.appendChild(script);
+	</script> 
+</body>

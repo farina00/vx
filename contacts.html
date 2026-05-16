@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>ValidFIX - Contact Us</title>
+	<link href="s.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="header">
+	   <a href="http://www.validfix.com/index.html">
+    	<img src="http://www.validfix.com/img/validfix.jpg" border="0" alt="ValidFIX - For FIX Protocol Users" width=315 height=105 />
+    	</a>
+	</div>
+	<div id="menu"></div>
+	
+	<div id="content">
+		<br>
+		<div>
+			<h3>Contact Us</h3>
+			
+			To Learn more about ValidFIX and <span style="font-weight:bold">VX</span>, please get in touch.
+		<form id='form' onsubmit="ajaxSubmission();return false">
+		<div style='margin:27px 0 30px 0;padding:10px 10px;color:#fff;background-color:#000;border-top:1px solid #888;border-radius: 8px;line-heigth:28px;'>
+		   <div>
+		   <span style='font-size:13px;display:inline-block;width:160px;'>Your name (optional):</span> 
+		   <input id='txtName' type='text' style='width:200px' />
+		   </div>
+		   <div style='margin-top:3px;margin-bottom:3px;'>
+		   <span style='font-size:13px;display:inline-block;width:160px;'>Your e-mail:<sup style='color:orange'>*</sup></span>
+			<input id='txtEmail' type='text' style='width:200px' required />
+			</div>
+			<span style='font-size:13px;display:inline-block;width:160px;'></span>
+			<input type="submit" style='margin:3px 0;padding:2px;' value="Tell Me More" />
+			<div style='padding:2px 0 0 0;color:orange;font-size:11px;font-style:italic;font-family:sans-serif;text-align:right'>
+			<sup>*</sup>We don't share your e-mail. We just use it to contact you to tell you about <span style="font-weight:bold">VX</span>
+			</div>
+		</div>
+		</form>
+		<div id='tky' style='display:none;font-size:12px;margin:27px 0 30px 0;padding:10px 10px;color:#fff;background-color:#000;border-top:1px solid #888;border-radius: 8px;line-heigth:28px;'>
+		Thank You.<br>You will receive an email from one of us within the next 48 hours.</div>
+		
+			<h4>Email</h4>
+			Send us an email at any time. We answer all email within one or two business days. 
+			If you have not received a response from us it is likely you have some spam filters
+			installed which are blocking our messages to you. If you maintain an incoming whitelist, 
+			please allow all messages from the validfix.com domain.
+			<div>
+			<br>
+			info@validfix.com
+			</div>
+			<h4>Office</h4>
+			788-790 Finchley Road<br>
+			London, NW11 7TJ<br>
+			U.K.<br>
+			Registered in England No: 7137205
+		</div>
+	</div>
+	<div id='ft'>
+	   <div style='padding:4px;'>
+    	Copyright &copy; 2013 ValidFIX. All Rights Reserved. 
+    	</div>
+    	<a href="about.html">About Us</a> -
+    	Contact Us - 
+    	<a href="privacy.html">Privacy</a> - 
+    	<a href="terms.html">Terms Of Service</a> -
+    	<a href="http://validfix.blogspot.com/">Blog</a>
+	</div>
+<script type="text/javascript"> 
+function trim(str) { return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '') };
+var txtEmail=document.getElementById('txtEmail');var txtName=document.getElementById('txtName');
+function ajaxSubmission() { var email=txtEmail.value; var name=txtName.value; 
+   if (trim(email).length == 0){txtEmail.focus();return;}
+   document.getElementById('form').style.display = 'none';
+   document.getElementById('tky').style.display = 'block';
+   var script = document.createElement("script");script.src="usersubscribe.js?email="+encodeURIComponent(email)+'&name='+encodeURIComponent(name); 
+   document.body.appendChild(script);
+}
+var _gaq = _gaq || []; 
+  _gaq.push(['_setAccount', 'UA-15080849-1']); 
+  _gaq.push(['_trackPageview']); 
+  (function() { 
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+    ga.src = 'http://www.google-analytics.com/ga.js'; 
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga); 
+  })(); 
+</script>
+</body>
+</html>

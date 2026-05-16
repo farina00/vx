@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>ValidFIX - FIX Log Analyzer</title>
+	<meta name="description" content="FIX Log Analyzer gives users the ability to inspect, analyze and validate FIX messages in any log file" />
+	<link href="http://www.validfix.com/s.css" rel="stylesheet" type="text/css" />   
+</head>
+<body>
+	<div id='init'></div>
+	<div id="header">
+	    <a href="http://www.validfix.com/index.html">
+    	<img src="http://www.validfix.com/img/validfix.jpg" border="0" alt="ValidFIX - For FIX Protocol Users"/>
+    	</a>
+	</div>
+	<div id="menu">
+		<ul>
+		   <li><a href="http://www.validfix.com/quick-tour.html">Quick Tour</a></li>
+			<li><a href="fix-analyzer.html">FIX Analyzer</a></li>
+			<li><span>FIX Log Analyzer</span></li>
+		</ul>
+	</div>
+	<div id='smae' onclick='tryMe2();' >[Show Me An Example]</div>
+    <div style="margin-left:2%;margin-right:2%;text-align:center;padding:30px 0 0 0;">
+	    <textarea spellcheck='false' id='txtFix' 
+		  style="border:1px solid #999999; 
+		  padding:3px; width:100%;
+		  height:110px;font-size: 11px;
+		  overflow-x:hidden;" wrap="off" >
+	    </textarea>
+	    <input type="button" style="margin:2px 0 0 0;" id='btn' onclick="if (document.exec2) document.exec2(); else document.getElementById('init').innerHTML='Loading...';" value="Analyze"/>
+	</div>
+  
+	<div id='bars'>
+		click on the bars to stop processing
+		<div id="progressbar"  onclick="if (document.stopParsing)   document.stopParsing();  else document.getElementById('init').innerHTML='Loading...';"><div>Analyzing</div></div>
+		<div id="progressbar2" onclick="if (document.stopRendering) document.stopRendering();else document.getElementById('init').innerHTML='Loading...';"><div>Rendering</div></div>
+	</div>
+	<div id='result' style="position: relative;
+        white-space:nowrap;
+        margin-left:2%;
+        left:0px;
+        top: 30px;
+        font-size:  11px;
+    	  color:      black;
+        background-image:url('img/fla-nbkg.jpg');
+		  background-repeat:repeat-y;">
+	</div>
+   <script>
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = "js/all.js";
+		document.body.appendChild(script);
+	</script> 
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ValidFIX - Home</title>
+    <meta
+      name="description"
+      content="ValidFIX - FIX for Business, FIX for real users"    />
+
+    <style>
+
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      #ticker-wrap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 0;
+        overflow: visible;
+        opacity: 0.16;
+        padding: 0;
+        margin-top: 0;
+        user-select: none;
+      }
+
+      #ticker {
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+        font-family: monospace;
+        font-size: 13px;
+        padding: 4px 8px;
+        background: linear-gradient(90deg, #fffff3, #f3ffff);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+        pointer-events: none;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 11px;
+      }
+
+
+      button {
+        margin-top: 32px;
+        padding: 12px 24px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+      }
+
+      button:hover {
+        background-color: #006bef;
+      }
+
+      a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  color: #006bef;
+  text-decoration: underline;
+}
+
+      dialog {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        width: 420px;
+        padding: 24px;
+        border: 2px solid #333;
+        border-radius: 8px;
+        line-height: 1.4;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+}
+      
+
+dialog[open] {
+  animation: popIn 0.6s ease-out;
+}
+
+
+@keyframes popIn {
+  0%   { transform: translate(-50%, -48%) scale(0.2); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+    </style>
+  </head>
+
+  <body>
+    <div
+      style="
+        position: fixed;
+        top: 10%;
+        left: 0;
+        right: 0;
+        max-width: 784px;
+        margin: 0 auto;
+        padding: 0 16px;
+      "
+    >
+      <a href="index.html">
+        <img src="img/validfix.jpg" width="315" height="105" alt="ValidFIX - For FIX Protocol Users" />
+      </a>
+
+      <div style="font-size: 24px">
+        A technology company solving problems to do with FIX data.
+
+        <!-- Infinite wrap-around smooth scroll -->
+        <div id="ticker-wrap">
+          <div id="ticker">
+            <span id="t1">
+              8=FIX.4.4|9=148|35=D|34=102|49=BUY_SIDE|52=20231027-10:30:01.000|56=SELL_SIDE|11=ORD_12345|21=1|54=1|55=AAPL|38=100|40=2|44=175.50|59=0|60=20231027-10:30:00.000|10=045|
+            </span>
+            <span id="t2"></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="divThanks" style="font-size: 11px;margin-top:16px"></div>
+      <dialog id="contactForm">
+        <div style="margin-bottom: 16px">
+          <h2>Contact Us</h2>
+        </div>
+        <div style="margin-bottom:12px;">
+        You can email us at <a href="mailto:info@validfix.com">info@validfix.com</a>
+         or use the form below to send us a message.
+        </div>
+        <div style="margin-bottom: 12px">
+          <label>Your name *</label>
+          <input
+            type="text"
+            id="txtName"
+            style="width: 100%; padding: 8px; font-size: 16px"
+          />
+        </div>
+
+        <div style="margin-bottom: 12px">
+          <label>Your email *</label>
+          <input
+            type="email"
+            id="txtEmail"
+            style="width: 100%; padding: 8px; font-size: 16px"
+          />
+        </div>
+
+        <div style="margin-bottom: 12px">
+          <label>Your message</label>
+          <textarea
+            id="txtMessage"
+            rows="4"
+            style="width: 100%; padding: 8px; font-size: 16px"
+          ></textarea>
+        </div>
+
+        <div style="display: flex; gap: 8px; justify-content: flex-end">
+          <button id="closeBtn" type="button" style="background-color: #6c757d">
+            Close
+          </button>
+          <button id="sendBtn">Send</button>
+        </div>
+      </dialog>
+    </div>
+
+    <div class="footer">© 2026 ValidFIX Ltd - 
+        <button id="contactBtn" style="margin:0;padding:0;font-size:11px;color:#007bff;background:white">Contact Us</button>
+    </div>  
+
+    <script>
+
+      function $(id) {
+        return document.getElementById(id);
+      }
+
+
+      function isGenuineMessage({ name, message, email }) {
+        if (!name || !email) return false;
+        // Basic email check
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) return false;
+        // Basic human name check
+        const nameRegex = /^[a-zA-Z ,.'-]{2,}$/;
+        const suspiciousNames = [
+        "test",
+        "asdf",
+        "qwerty",
+        "xxx",
+        "none",
+        "null",
+        ];
+        const cleanedName = name.trim().toLowerCase();
+        if (!nameRegex.test(cleanedName)) return false;
+        if (suspiciousNames.includes(cleanedName)) return false;
+        // Message check (optional but must not be nonsense)
+        if (message && message.trim() !== "") {
+        const trimmed = message.trim();
+        // Too short to be meaningful
+        if (trimmed.length < 3) return false;
+        // Only symbols or gibberish
+        if (/^[^a-zA-Z0-9]+$/.test(trimmed)) return false;
+        }
+        return true;
+      }
+
+
+      const t1 = $("t1");
+      const t2 = $("t2");
+      const ticker = $("ticker");
+
+      // Duplicate text for seamless looping
+      t2.textContent = t1.textContent;
+
+      let x = 0;
+      let wobble = 0;
+      let count = 0;
+
+      function animate() {
+        count++;
+        const speedFactor = 0.5 + (Math.sin((count * Math.PI) / 180) + 1); // Speed oscillates between 0.6 and 1.0
+        x -= speedFactor; // Base speed with oscillation
+        wobble += 0.5; // wobble speed
+        const width = t1.offsetWidth;
+
+        // Wrap-around when first copy fully leaves
+        if (-x >= width) {
+          x += width;
+        }
+
+        ticker.style.transform = `translateX(${x}px) rotate(${Math.sin((wobble * Math.PI) / 180) * 1.8}deg)`;
+
+        ticker.style.willChange = "transform";
+
+        requestAnimationFrame(animate);
+      }
+
+      animate();
+
+      const contactForm = $("contactForm");
+      const contactBtn = $("contactBtn");
+
+      contactBtn.addEventListener("click", () => {
+        contactForm.showModal();
+      });
+
+      $("closeBtn").addEventListener("click", () => {
+        contactForm.close();
+      });
+
+      $("sendBtn").addEventListener("click", () => {
+        const divThanks = $("divThanks");
+        const script = document.createElement("script");
+        const oj = {
+          name:    $("txtName").value,
+          email:   $("txtEmail").value,
+          message: $("txtMessage").value
+        };
+        if (!isGenuineMessage(oj)) {
+          divThanks.innerHTML = "😞 - Nothing was sent.";
+          contactForm.close();
+          setTimeout(() => {
+            divThanks.innerHTML = "";
+          }, 5000);
+          return;
+        }
+        script.src = "contactus.js?oj=" + encodeURIComponent(JSON.stringify(oj));
+        document.body.appendChild(script);
+        divThanks.innerHTML = "Thank you " + oj.name + " for your message! We'll get back to you soon";
+        contactBtn.disabled = true;
+        contactBtn.style.opacity=0.5;
+        contactForm.close();
+      });
+    </script>
+  </body>
+</html>

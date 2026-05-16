@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>ValidFIX - Pricing - Fix Analyzer and Fix Log Analyzer</title>
+	<link href="s.css" rel="stylesheet" type="text/css" />
+	<style>
+	.tp {width:100%;border:0px solid orange;font-size:16px;}
+	.tp td { color:#000;background-color:#eee; }
+	.tf {width:100%;border:0px solid orange;font-size:16px;}
+	.tf td {width: 50%;padding:20px 10px;vertical-align:top;color:#777;border-bottom:0px solid orange;} 
+	a {text-decoration: underline;}
+	input, select { vertical-align:middle; font:99% sans-serif; height:24px; }
+	</style>
+</head>
+<body>
+	<div id="header">
+	   <a href="http://www.validfix.com/index.html">
+    	<img src="img/validfix.jpg" border="0" alt="ValidFIX - For FIX Protocol Users" />
+    	</a>
+	</div>
+	<div id="menu">
+	   <ul>
+	      <li><a href="quick-tour.html">Quick Tour</a></li>
+		   <li><a href="fix-analyzer.html">FIX Analyzer</a></li>
+			<li><a href="fix-log-analyzer.html">FIX Log Analyzer</a></li>
+			<li><span>Pricing</span></li>
+		</ul>
+	</div>
+	
+	<div id="content">
+		<br>
+		<div style='background-color:#333;color:#FFF;border:1px solid #333;padding:10px;border-radius:8px;'>
+		<div style='font-size:11px;color:orange;text-align:right'> 
+		The best online tools for your FIX data.
+		</div>
+		<span style='font-weight:bold'>FIX Analyzer and FIX Log Analyzer</span>
+		<br>
+		Unlimited users
+		<br>
+		Unlimited queries
+		<br>
+		<form id='form' onsubmit="ajaxSubmission();return false">
+		<div style='margin:30px 0 0 0;border-radius:5px; padding:14px; background-color:#eee;color:#000;'> 
+		<table class='tp' >
+			<tbody>
+			<tr>
+			<td>Your Plan:</td>
+			<td>
+			<select id='selPlan'
+			  style='margin-left:0;' 
+			  onchange='var ix=this.selectedIndex;var c=document.getElementById("cost2");if(ix==0)c.innerHTML="$133/month"; else if (ix==1) c.innerHTML="$167/month"; else c.innerHTML="$200/month"'>
+			  <option>12 months - $1600</option>
+			  <option> 6 months - $1000</option>
+			  <option> 3 months - $600</option>
+			</select>
+			</td>
+			<td>
+			<div id='cost2' style='font-family:serif;font-size:16px; text-align:right;font-weight:bold'>$133/month</div>
+			</td>
+			</tr>
+			<tr>
+			<td>
+			Your name: 
+			</td>
+			<td>
+			<input id='txtName' style='width:400px' type='text' required />
+			</td>
+			<td></td>
+			</tr>
+			<tr>
+			<td>
+			Your email: 
+			</td>
+			<td>
+			<input id='txtEmail' style='width:400px' type='text' required />
+			</td>
+			<td></td>
+			</tr>	
+			<tr>
+			<td>
+			</td>
+			<td>
+			<div style='font-size:11px;;margin:10px 0 10px 0px;'>
+		Please check your email carefully. We need it to send you the order confirmation<br>
+		We'd also recommend you use your company email address.</div>
+			</td>
+			<td>
+			</td>
+			</tr>
+			<tr>
+			<td>
+			</td>
+			<td>
+			<input id='btn' style='margin:0;padding:10px 30px;height:auto;' type='submit' value='Buy Now' />
+			</td>
+			<td>
+			</td>
+			</tr>
+			</tbody>
+		</table>
+		<div id='tky' style='display:none; font-weight:bold;font-size:18px;color:orange;'>
+		Thank you for choosing our services. You will soon receive an email from us.
+		<br>Follow the instructions in the email to complete the purchase.
+		</div>
+		<ol style='padding:0; margin:30px 0 10px 20px;font-size:11px;'>
+		<li>Within 8 hours (usually less), you will receive the invoice.</li>
+		<li>Once your order is processed we will send you a unique URL and passcode for you to access FIX Log analyzer and FIX analyzer.</li>
+		<li>Need to know more ? <a href='tos-pricing.html'>View our complete terms of service</a></li>
+		</ol>
+		</div>
+		</form>
+		</div> 
+		<br>
+		<br>
+		<table class='tf' >
+		<tbody>
+		<tr>
+		<td>
+		<h4>Do I have to sign a long term contract?</h4> 
+		No. Our shortest offer is for 3 months, which reflects the duration of a small FIX project.
+      Some people might prefer to enter a longer deal - 6 months or a year - in view of a cheaper monthly rate. 
+		</td>
+		<td>
+		<h4>Can ValidFIX really handle my large team ?</h4>
+		Of course, we can. In the last four years, our services have been up and running every single day. 
+		</td>
+		</tr>
+		<tr>
+		<td>
+		<h4>When will I be able to use the services ?</h4>
+		It usually takes less than 24 hours from the moment you press the 'buy now' button to the moment in which you will have the services enabled.  
+		</td>
+		<td>
+		<h4>Any deals for students or startups ?</h4>
+		Our tools are free for students and startup teams of two users or less. 
+		This allows teams of one or two people to use a complete, full-featured version of our services at absolutely no cost. No credit cards, no advertising, and no catch.
+		Contact us via <a href='contacts.html'>email</a> to know more.
+		</td>
+		</tr>
+		</tbody>
+		</table>   
+		<br>
+		<br>
+		<br>
+	</div>
+	<div style='background-color:#fff;border-bottom:2px solid #333;border-top:2px solid #333;padding:12px;'>
+		<center>
+		<br>
+		Banks, exchanges, hedge funds around the world rely on our products every day.
+		<br>
+		We’ll never take their trust — or your trust — for granted.
+		<br>
+		<ximg style='padding:20px 0 20px 0' src='wmap.gif'  height="238" width="365" alt='world map of some of the clients '/>
+		<div style='margin:40px 3px; xopacity:0.3;'>
+		<img style='margin:9px' src='lg-ca.png' width="223" height="76" alt='logo cantor fitzgerald'/>
+		<img style='margin:9px' src='lg-cp.png' width="182" height="76" alt='logo capula'/>
+		<img style='margin:9px' src='lg-ko.png' width="200" height="76" alt='logo konkyl'/>
+		<img style='margin:9px' src='lg-lm.png' width="191" height="76" alt='logo lmax'  />
+		<img style='margin:9px' src='lg-lo.png' width="271" height="76" alt='logo lowey' />
+		<img style='margin:9px' src='lg-so.png' width="234" height="76" alt='logo sopra banking'/>
+		<img style='margin:9px' src='lg-st.png' width="279" height="76" alt='logo statestreet' />
+		</div>
+		</center>
+	</div>
+	<br>
+	<div style='width:772px;margin:48px auto;font-size:12px;font-style:italic'>
+	<div style='font-weight:bold'>Immensely useful</div>
+	<div>"We were going to build our own version of FIX verification but after measuring comparable cost structure, 
+	      flexibility and completeness of product, we realized that there is no need to reinvent the wheel.  
+	      ValidFIX simplified our work and helped to save decent amount of human capital time as well."</div>
+    <div style='font-weight:bold'>Ugur Arslan - [CEO] - AienTech</div>
+	</div>
+	<div style='width:772px;margin:48px auto;font-size:12px;font-style:italic'>
+	<div style='font-weight:bold'>The valuable insights that we required</div>
+	<div>"Excellent tools for getting the project done in time and right."</div>
+    <div style='font-weight:bold'>Geoffrey Horn - Partner at Lowey Dannenberg Cohen &amp; Hart P.C</div>
+	</div>
+	<div id='ft'>
+	   <div style='padding:4px;'>
+    	Copyright &copy; 2013 ValidFIX. All Rights Reserved. 
+    	</div>
+    	<a href="about.html">About Us</a> -  
+    	<a href="contacts.html">Contact Us</a> -
+    	<a href="privacy.html">Privacy</a> - 
+    	<a href="terms.html">Terms Of Service</a> - 
+    	<a href="http://validfix.blogspot.com/">Blog</a>
+	</div>
+<script>
+function trim(str) { return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '') };
+var txtEmail=document.getElementById('txtEmail');
+var txtName=document.getElementById('txtName');
+function ajaxSubmission() {
+   var email=trim(txtEmail.value);
+   var name=trim(txtName.value);
+   if (email.length===0){txtEmail.focus();return;}
+   if (name.length===0){txtName.focus();return;}
+   if (email.indexOf('@')===-1) {alert('Invalid Email');txtEmail.value='';txtEmail.focus();return}
+   document.getElementById('btn').style.display = 'none';
+   document.getElementById('tky').style.display = 'block';
+   var script = document.createElement("script");
+   script.src="iwant2buy.js?newLook&email="+encodeURIComponent(email)+'&name='+encodeURIComponent(name)+"&cost="+encodeURIComponent(document.getElementById("cost2").innerHTML);
+   document.body.appendChild(script);
+}
+var _gaq = _gaq || []; 
+_gaq.push(['_setAccount', 'UA-15080849-1']); 
+_gaq.push(['_trackPageview']); 
+var ga = document.createElement('script');ga.async = true; 
+ga.src = 'http://www.google-analytics.com/ga.js'; 
+document.getElementsByTagName('head')[0].appendChild(ga); 
+</script>		
+</body>
+</html>

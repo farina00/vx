@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: /cheat-sheets/
+Sitemap: http://www.validfix.com/sitemap.xml

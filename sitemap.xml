@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+<url>
+    <loc>http://www.validfix.com/</loc>
+    <priority>0.8</priority>
+</url> 
+<url>
+    <loc>http://www.validfix.com/index.html</loc>
+    <priority>0.8</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/fix-analyzer.html</loc>
+    <priority>0.8</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/fix-log-analyzer.html</loc>
+    <priority>0.8</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/pricing.html</loc>
+    <priority>0.8</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/tos-pricing.html</loc>
+    <priority>0.2</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/about-vx.html</loc>
+    <priority>0.6</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/quick-tour.html</loc>
+    <priority>0.5</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/about.html</loc>
+    <priority>0.4</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/privacy.html</loc>
+    <priority>0.2</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/terms.html</loc>
+    <priority>0.2</priority>
+</url>  
+<url>
+    <loc>http://www.validfix.com/testimonials.html</loc>
+    <priority>0.4</priority>
+</url> 
+<url>
+    <loc>http://www.validfix.com/contacts.html</loc>
+    <priority>0.4</priority>
+</url> 
+</urlset>        
