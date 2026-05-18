@@ -273,7 +273,7 @@ dialog[open] {
         contactForm.close();
       });
 
-      $("sendBtn").addEventListener("click", async () => {
+      $("sendBtn").addEventListener("click", () => {
         const divThanks = $("divThanks");
         const oj = {
           name:    $("txtName").value,
@@ -286,14 +286,14 @@ dialog[open] {
           setTimeout(() => {
             divThanks.innerHTML = "";
           }, 5000);
-          return;
+          return; 
         }
-        try { 
-        await fetch("https://script.google.com/macros/s/AKfycbyn5wPkbXHfHC6hYQV93HaYEgJldaWtkaUGKujww6zA9TJjkAWhuDQjysNeANGHK6ntMQ/exec", { 
+         
+        fetch("https://script.google.com/macros/s/AKfycbyn5wPkbXHfHC6hYQV93HaYEgJldaWtkaUGKujww6zA9TJjkAWhuDQjysNeANGHK6ntMQ/exec", { 
+          headers: { "Content-Type": "application/json" },
           method: "POST",
           body: JSON.stringify(oj)
-       });
-      } catch(e) { ; }
+        });      
 
         divThanks.innerHTML = "Thank you " + oj.name + " for your message! We'll get back to you soon";
         contactBtn.disabled = true;
