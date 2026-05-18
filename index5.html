@@ -288,11 +288,12 @@ dialog[open] {
           }, 5000);
           return;
         }
-
+        try { 
         await fetch("https://script.google.com/macros/s/AKfycbyn5wPkbXHfHC6hYQV93HaYEgJldaWtkaUGKujww6zA9TJjkAWhuDQjysNeANGHK6ntMQ/exec", { 
           method: "POST",
           body: JSON.stringify(oj)
        });
+      } catch(e) { ; }
 
         divThanks.innerHTML = "Thank you " + oj.name + " for your message! We'll get back to you soon";
         contactBtn.disabled = true;
