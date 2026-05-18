@@ -273,7 +273,7 @@ dialog[open] {
         contactForm.close();
       });
 
-      $("sendBtn").addEventListener("click", () => {
+      $("sendBtn").addEventListener("click", async () => {
         const divThanks = $("divThanks");
         const oj = {
           name:    $("txtName").value,
