@@ -185,6 +185,8 @@ dialog[open] {
       </dialog>
     </div>
     </main>
+    
+    
     <div class="footer">© 2026 ValidFIX Ltd - 
         <button id="contactBtn" style="margin:0;padding:0;font-size:11px;color:#007bff;background:white">Contact Us</button>
     </div>  
@@ -273,7 +275,6 @@ dialog[open] {
 
       $("sendBtn").addEventListener("click", () => {
         const divThanks = $("divThanks");
-        const script = document.createElement("script");
         const oj = {
           name:    $("txtName").value,
           email:   $("txtEmail").value,
@@ -287,8 +288,12 @@ dialog[open] {
           }, 5000);
           return;
         }
-        script.src = "contactus.js?oj=" + encodeURIComponent(JSON.stringify(oj));
-        document.body.appendChild(script);
+
+        await fetch("https://script.google.com/macros/s/AKfycbyn5wPkbXHfHC6hYQV93HaYEgJldaWtkaUGKujww6zA9TJjkAWhuDQjysNeANGHK6ntMQ/exec", { 
+          method: "POST",
+          body: JSON.stringify(oj)
+       });
+
         divThanks.innerHTML = "Thank you " + oj.name + " for your message! We'll get back to you soon";
         contactBtn.disabled = true;
         contactBtn.style.opacity=0.5;
